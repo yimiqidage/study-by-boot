@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<services xmlns="http://up.sohu.com/peak/channel/services"
+		  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+		  xsi:schemaLocation="http://up.sohu.com/peak/channel/services services.xsd"
+>
+	<service>
+		<service-name>alipay</service-name>
+		<service-class>com.sohu.rdapp.peak_channel.paygate.services.request.AlipayRequestService</service-class>
+		<service-type>form</service-type>
+		<service-params>
+			<param name="service">create_direct_pay_by_user</param>
+			<param name="partner">2088001884883961</param>
+			<param name="_input_charset">GBK</param>
+			<param name="sign_type">MD5</param>
+			<param name="notify_url">/channel/gw/dyna/payres/alipay_notify</param>
+			<param name="return_url">/channel/gw/dyna/payres/alipay_return</param>
+			<param name="payment_type">1</param>
+			<param name="seller_email">peakreg@vip.sohu.com</param>
+			<param name="key">4uz8a6gmm1i9wc16bntan4k8uhhf8nuj</param>
+			<param name="gateway">https://mapi.alipay.com/gateway.do</param>
+			
+		</service-params>
+	</service>
+	
+	<service>
+		<service-name></service-name>
+		<service-type>form</service-type>
+		<service-class></service-class>
+		
+	</service>
+</services>

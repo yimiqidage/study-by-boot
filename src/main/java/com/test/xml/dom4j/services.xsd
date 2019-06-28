@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+		targetNamespace="http://up.sohu.com/peak/channel/services"
+	elementFormDefault="qualified">
+	<xs:annotation>
+		<xs:appinfo>services.xsd</xs:appinfo>
+		<xs:documentation>针对services.xml书写格式，进行约束，编写的xsd</xs:documentation>
+	</xs:annotation>
+	
+	<xs:element name="services">
+		<xs:complexType >
+			<xs:sequence maxOccurs="unbounded"> <!-- xs:sequence 要求子元素必须按顺序出现。每个子元素可出现 0 到任意次数。 -->
+				<xs:element name="service">
+					<xs:complexType>
+						<xs:all> <!-- xs:all 规定子元素能够以任意顺序出现，每个子元素可出现零次或一次。注意与  xs:sequence 区别。 -->
+							<xs:element name="service-name" type="xs:string" minOccurs="1" maxOccurs="1"/><!-- 设置简单类型 -->
+							<xs:element name="service-class" type="xs:string" minOccurs="1" maxOccurs="1"/>
+							<xs:element name="service-type" minOccurs="1" maxOccurs="1">
+								<xs:simpleType >  <!-- 设置 service-type ，只能为以下值-->
+								  <xs:restriction base="xs:string">
+								    <xs:enumeration value="xml"/>
+								    <xs:enumeration value="text"/>
+								    <xs:enumeration value="json"/>
+								    <xs:enumeration value="form"/>
+								    <xs:enumeration value="jump"/>
+								    <xs:enumeration value="other"/>
+								  </xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							
+							<xs:element name="service-params" minOccurs="0">
+								<xs:complexType >
+									<xs:sequence maxOccurs="unbounded">
+										<xs:element name="param"> <!-- 设置仅含文本：http://www.w3school.com.cn/schema/schema_complex_text.asp -->
+											<xs:complexType >
+												<xs:simpleContent>
+													<xs:extension base="xs:string">
+														<xs:attribute name="name" use="required" type="xs:string"/>
+													</xs:extension>
+												</xs:simpleContent>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:all>
+					</xs:complexType>
+				</xs:element>	
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+</xs:schema>
