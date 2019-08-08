@@ -1,6 +1,6 @@
 package com.jdk8.stream.future;
 
-import com.emails.SendEmail;
+//import com.emails.SendEmail;
 import com.sun.org.apache.xerces.internal.dom.PSVIAttrNSImpl;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -43,7 +43,7 @@ public class CompletableFutureDemo {
         //2、当异步任务执行完毕后，调用 whenCompleteTest 方法
         CompletableFuture<Integer> resultFuture = completableFuture.whenComplete((i,t)-> {
             try{
-                whenCompleteTest(i, t);
+//                whenCompleteTest(i, t);
             }catch (Exception e){
                 e.printStackTrace();
             }
@@ -70,10 +70,10 @@ public class CompletableFutureDemo {
 //        }
     }
 
-    public  void whenCompleteTest (Integer i,Throwable t) throws Exception{
-        log.info("whenCompleteTest,completed:："+i);
-        sendHtmlMail();
-    };
+//    public  void whenCompleteTest (Integer i,Throwable t) throws Exception{
+//        log.info("whenCompleteTest,completed:："+i);
+//        sendHtmlMail();
+//    };
 
     public static int sleep()  {
         int seconds= 5;
@@ -111,32 +111,32 @@ public class CompletableFutureDemo {
 //    }
 
 
-    /**
-     * 发送包含HTML文本的邮件
-     *
-     * @throws Exception
-     */
-    @Test
-    public void sendHtmlMail() throws Exception {
-        MimeMessage mimeMessage = mailSender.createMimeMessage();
-        MimeMessageHelper mimeMessageHelper = new MimeMessageHelper(mimeMessage);
-        mimeMessageHelper.setTo("563961284@qq.com");
-        mimeMessageHelper.setFrom("shiwei8b402@126.com");
-        mimeMessageHelper.setSubject("test 邮件测试【HTML】"+System.currentTimeMillis());
-
-        StringBuilder sb = new StringBuilder();
-        sb.append("<html><head></head>");
-        sb.append("<body><h1>spring 邮件测试</h1><p>hello!this is spring mail test。</p></body>");
-        sb.append("</html>");
-
-        // 启用html
-        mimeMessageHelper.setText(sb.toString(), true);
-        // 发送邮件
-        mailSender.send(mimeMessage);
-
-        System.out.println("邮件已发送");
-
-    }
+//    /**
+//     * 发送包含HTML文本的邮件
+//     *
+//     * @throws Exception
+//     */
+//    @Test
+//    public void sendHtmlMail() throws Exception {
+//        MimeMessage mimeMessage = mailSender.createMimeMessage();
+//        MimeMessageHelper mimeMessageHelper = new MimeMessageHelper(mimeMessage);
+//        mimeMessageHelper.setTo("563961284@qq.com");
+//        mimeMessageHelper.setFrom("shiwei8b402@126.com");
+//        mimeMessageHelper.setSubject("test 邮件测试【HTML】"+System.currentTimeMillis());
+//
+//        StringBuilder sb = new StringBuilder();
+//        sb.append("<html><head></head>");
+//        sb.append("<body><h1>spring 邮件测试</h1><p>hello!this is spring mail test。</p></body>");
+//        sb.append("</html>");
+//
+//        // 启用html
+//        mimeMessageHelper.setText(sb.toString(), true);
+//        // 发送邮件
+//        mailSender.send(mimeMessage);
+//
+//        System.out.println("邮件已发送");
+//
+//    }
 
 }
 

@@ -1,0 +1,11 @@
+spring:
+  mvc:
+    view:
+      prefix: /WEB-INF/
+      suffix: .jsp
+
+
+
+logging:
+  level:
+    com.spring4: INFO
