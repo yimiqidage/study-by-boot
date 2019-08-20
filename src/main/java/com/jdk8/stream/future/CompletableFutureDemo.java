@@ -25,7 +25,7 @@ import java.util.stream.Collectors;
 @SpringBootTest
 public class CompletableFutureDemo {
 
-    @Autowired
+//    @Autowired
     private JavaMailSenderImpl mailSender;
 
     public  static Log log = LogFactory.getLog(CompletableFutureDemo.class);

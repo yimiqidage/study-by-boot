@@ -40,7 +40,7 @@ public class EmailDemo {
     /**
      * 发送邮件，使用JavaMailSender接口，MailSender 接口只有两个简单的send方法
      */
-    @Autowired
+//    @Autowired
     private JavaMailSender mailSender;
 
     @Autowired

@@ -5,7 +5,6 @@ import redis.clients.jedis.HostAndPort;
 import redis.clients.jedis.JedisCluster;
 
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
@@ -19,7 +18,7 @@ import java.util.Set;
  * 2.集群列表Set<HostAndPort>jedisClusterNode中，只要有一个可用，就不会报错。之所以连接多个节点，是为了防止某些节点宕机，导致无法连接到集群。
  * 3.即使连接的是cluster中的slave，也可以进行集群操作。
  */
-public class JedisClusterTest {
+public class JedisClusterTest2 {
 
     //redis集群列表
     private Set<HostAndPort> jedisClusterNode = null;
@@ -30,7 +29,7 @@ public class JedisClusterTest {
 
     private JedisCluster jedisCluster ;
 
-    public JedisClusterTest(){
+    public JedisClusterTest2(){
         jedisClusterNode = new HashSet<HostAndPort>();
 
         //1、断掉其中一个节点，如6379，客户端仍然可以继续使用。
@@ -52,7 +51,7 @@ public class JedisClusterTest {
     }
 
     public static void main(String[] args) throws InterruptedException {
-        JedisClusterTest jedis = new JedisClusterTest();
+        JedisClusterTest2 jedis = new JedisClusterTest2();
         SimpleDateFormat sdf =  new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         String dateStr = sdf.format(new Date());
         jedis.jedisCluster.set("msg","java set jedis key,"+dateStr);

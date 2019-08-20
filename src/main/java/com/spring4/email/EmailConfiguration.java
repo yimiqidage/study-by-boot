@@ -85,12 +85,12 @@ public class EmailConfiguration {
     @Bean
     public JavaMailSender javaMailSender(Environment environment){
         JavaMailSenderImpl javaMailSender = new JavaMailSenderImpl();
-        javaMailSender.setHost(environment.getProperty("spring.mail.host"));
-        javaMailSender.setPassword(environment.getProperty("spring.mail.password"));
-        javaMailSender.setUsername(environment.getProperty("spring.mail.username"));
-        javaMailSender.setPort(Integer.parseInt(environment.getProperty("spring.mail.port")));
-        javaMailSender.setProtocol(environment.getProperty("spring.mail.protocol"));
-        javaMailSender.setDefaultEncoding(environment.getProperty("spring.mail.default-encoding"));
+//        javaMailSender.setHost(environment.getProperty("spring.mail.host"));
+//        javaMailSender.setPassword(environment.getProperty("spring.mail.password"));
+//        javaMailSender.setUsername(environment.getProperty("spring.mail.username"));
+//        javaMailSender.setPort(Integer.parseInt(environment.getProperty("spring.mail.port")));
+//        javaMailSender.setProtocol(environment.getProperty("spring.mail.protocol"));
+//        javaMailSender.setDefaultEncoding(environment.getProperty("spring.mail.default-encoding"));
         return javaMailSender;
     }
 
