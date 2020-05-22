@@ -168,23 +168,6 @@
             <artifactId>commons-pool</artifactId>
             <version>${commons.pool.version}</version>
         </dependency>
-<!--        <dependency>-->
-<!--            <groupId>commons-io</groupId>-->
-<!--            <artifactId>commons-io</artifactId>-->
-<!--            <version>${commons.io.version}</version>-->
-<!--        </dependency>-->
-<!--        <dependency>-->
-<!--            <groupId>commons-net</groupId>-->
-<!--            <artifactId>commons-net</artifactId>-->EnableAutoConfiguration
-<!--            <version>${commons.net.version}</version>-->
-<!--        </dependency>-->
-
-
-        <!-- 引入Spring security-->
-<!--        <dependency>-->
-<!--            <groupId>org.springframework.boot</groupId>-->
-<!--            <artifactId>spring-boot-starter-security</artifactId>-->
-<!--        </dependency>-->
 
         <dependency>
             <groupId>org.springframework.boot</groupId>

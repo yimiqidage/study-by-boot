@@ -1,6 +1,5 @@
 package com.jdk8.stream.codeStyle;
 
-import com.sun.xml.internal.org.jvnet.fastinfoset.stax.LowLevelFastInfosetStreamWriter;
 import org.apache.commons.lang.StringUtils;
 
 import java.nio.file.FileVisitOption;

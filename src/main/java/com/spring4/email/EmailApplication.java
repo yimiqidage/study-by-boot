@@ -9,7 +9,7 @@ import org.springframework.context.annotation.ComponentScan;
  * Date&Time 2019-07-11 18:12
  * description
  */
-@SpringBootApplication
+//@SpringBootApplication
 public class EmailApplication {
     public static void main(String[] args) {
         SpringApplication.run(EmailApplication.class, args);
